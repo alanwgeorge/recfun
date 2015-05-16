@@ -38,15 +38,5 @@ object Main {
   /**
    * Exercise 3
    */
-  def countChange(money: Int, coins: List[Int]): Int = {
-    coins.sorted
-    def count(money: Int, coins: List[Int], count: Int) :Int = {
-      println(coins.head)
-      if (money == 0) count + 1
-      else money
-    }
-
-    if (money <= 0 || coins.isEmpty) 0
-    else count(money, coins, 0)
-  }
+  def countChange(money: Int, coins: List[Int]): Int = ???
 }
