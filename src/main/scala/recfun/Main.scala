@@ -1,5 +1,4 @@
 package recfun
-import common._
 
 object Main {
   def main(args: Array[String]) {
@@ -35,8 +34,18 @@ object Main {
 
     balance(chars, 0)
   }
+
   /**
    * Exercise 3
    */
-  def countChange(money: Int, coins: List[Int]): Int = ???
+  def countChange(money: Int, coins: List[Int]): Int = {
+    def count(money: Int, coins: List[Int], accumulatedCount: Int) :Int = {
+      if (money == 0) accumulatedCount + 1
+      else if (money < 0 || coins.isEmpty) accumulatedCount
+      else count(money - coins.head, coins, accumulatedCount) + count(money, coins.tail, accumulatedCount)
+    }
+
+    if (money <= 0 || coins.isEmpty) 0
+    else count(money, coins, 0)
+  }
 }
