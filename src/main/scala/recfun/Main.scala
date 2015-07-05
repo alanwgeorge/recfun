@@ -23,8 +23,8 @@ object Main {
    */
   def balance(chars: List[Char]): Boolean = {
     def balance(chars: List[Char], numOpen: Int): Boolean = {
-      if (chars.length == 0 && numOpen == 0) true
-      else if (chars.length == 0 && numOpen > 0) false
+      if (chars.isEmpty && numOpen == 0) true
+      else if (chars.isEmpty && numOpen > 0) false
       else if (numOpen < 0) false
       else
         if (chars.head == '(') balance(chars.tail, numOpen + 1)
